@@ -2,7 +2,7 @@
 
 ## TLDR
 
-Updated Jenkins as Code based on Docker image jenkins/jenkins:lts.
+Updated Jenkins as Code based on Docker image `jenkins/jenkins:lts`.
 
 ## General Overview
 
@@ -21,7 +21,7 @@ The password is generated and saved into a local file which is then transfered i
 The password below is just an example and I strongly recommend you to generate one of your own instead.
 
 ```bash
-echo "sACZ7RGTQ_K79ML9cVjNCz4q3" > ./adminpw.txt
+echo "sACZ7RGTQ_K79ML9cVjNCz4q3" > adminpw.txt
 docker-compose up -d
 ```
 
@@ -31,9 +31,10 @@ docker-compose up -d
 
 ```bash
 docker-compose down --volumes --remove-orphans
+rm adminpw.txt
 ```
 
-## View Settings in Code
+## View Jenkins YAML Settings
 
 Go to Manage **Jenkins -> Configuration as Code** and click on View Confiruation.
 
