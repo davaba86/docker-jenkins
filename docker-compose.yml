@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ./img-jenkins
+    image: jenkins:latest
+    secrets:
+      - adminpw
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./jenkins-config.yaml:/var/jenkins_home/jenkins.yaml
+
+secrets:
+  adminpw:
+    file: ./adminpw.txt
+
+volumes:
+  jenkins_home:

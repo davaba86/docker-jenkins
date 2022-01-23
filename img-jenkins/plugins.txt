@@ -1,0 +1,7 @@
+authorize-project:1.4.0
+caffeine-api:2.9.2-29.v717aac953ff3
+configuration-as-code:1.55.1
+matrix-auth:3.0
+role-strategy:3.2.0
+snakeyaml-api:1.29.1
+sshd:3.1.0

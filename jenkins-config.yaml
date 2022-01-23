@@ -1,0 +1,23 @@
+jenkins:
+  systemMessage: "Welcom to Jenkins as Code!"
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          name: "Jenkins Admin"
+          password: ${adminpw:-passw0rd}
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+      - "USER:Overall/Administer:admin"
+  remotingSecurity:
+    enabled: true
+security:
+  apiToken:
+    usageStatisticsEnabled: false
+  queueItemAuthenticator:
+    authenticators:
+    - global:
+        strategy: "triggeringUsersAuthorizationStrategy"
+    
